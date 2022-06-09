@@ -1,6 +1,7 @@
 import express from "express";
 
 const app = express();
+const port = 4000;
 
 interface BaseParams<IDType = number> {
   id: IDType;
@@ -111,3 +112,7 @@ app.delete<BaseParams, APIResponse<Dog>, Empty, Empty>(
     });
   }
 );
+
+app.listen(port, () => {
+  console.log(`API Dogs listening on port ${port}`);
+});

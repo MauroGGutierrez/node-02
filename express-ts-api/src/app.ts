@@ -1,6 +1,7 @@
 import express from "express";
 
 const app = express();
+const port = 4000;
 
 interface Dog {
   name: string;
@@ -102,4 +103,8 @@ app.delete<
     },
     message: "Dog deleted",
   });
+});
+
+app.listen(port, () => {
+  console.log(`API Dogs listening on port ${port}`);
 });
